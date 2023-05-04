@@ -12,7 +12,7 @@
             </button>
           </div>
           <div class="col-12 my-3">
-            <table class="table">
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <th scope="col">No</th>
