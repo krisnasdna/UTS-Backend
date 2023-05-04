@@ -1,5 +1,5 @@
 <?php 
-    include 'config.php';
+    include '../config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,9 +18,18 @@
             <h3>Lengkapi Biodata dengan benar</h3>
             <table>
                 <tr>
-                    <td>NIM (Nomor Induk Mahasiswa)</td>
+                    <td>Matkul</td>
                     <td>:</td>
-                    <td><input type="text" name="nim"></td>
+                    <td><select name="kode_matkul">
+                        <?php 
+                            $matkul = mysqli_query($conn, "SELECT * FROM matkul");
+                            while($data_matkul = mysqli_fetch_assoc($matkul)){
+                        ?>
+                            <option value="<?= $data_matkul["kode_matkul"]; ?>"><?= $data_matkul["nama_matkul"]; ?></option>
+                        <?php 
+                            }
+                        ?>
+                    </select></td>
                 </tr>
                 <tr>
                     <td>Nama Mahasiswa</td>
